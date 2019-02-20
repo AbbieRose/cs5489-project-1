@@ -1,3 +1,5 @@
+var synth = new Tone.Synth().toMaster()
+
 var alpha = null;
 var beta = null;
 var gamma = null;
@@ -15,6 +17,12 @@ document.getElementById('connect').onclick = function() {
             console.log("gamma: " + event.gamma);
             gamma = event.gamma
             document.getElementById("status").innerHTML = "Alpha " + event.alpha + " Beta " + event.beta + " Gamma " + event.gamma;
+            if (alpha > 30) {
+                synth.triggerAttackRelease('C4', '64n');
+            } else {
+                synth.triggerAttackRelease('E6', '64n');
+            }
+            
         }, false);
         window.addEventListener('devicemotion', function(event) {
             console.log("Detected motion");
