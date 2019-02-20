@@ -1,0 +1,27 @@
+var alpha = null;
+var beta = null;
+var gamma = null;
+
+document.getElementById('connect').onclick = function() {
+    console.log("Button clicked");
+    if (window.DeviceOrientationEvent) {
+        console.log("DeviceOrientationEvent supported");
+        window.addEventListener('deviceorientation', function(event) {
+            console.log("Detected orientation");
+            console.log("alpha: " + event.alpha);
+            alpha = event.alpha
+            console.log("beta: " + event.beta);
+            beta = event.beta
+            console.log("gamma: " + event.gamma);
+            gamma = event.gamma
+            document.getElementById("status").innerHTML = "Oriented";
+        }, "*");
+        window.addEventListener('devicemotion', function(event) {
+            console.log("Detected motion");
+            console.log("acceleration: " + event.acceleration);
+            document.getElementById("status").innerHTML = "Motion";
+        }, "*");
+    } else {
+        console.log("DeviceMotionEvent is not supported.")
+    }
+}
