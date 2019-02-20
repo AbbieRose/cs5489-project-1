@@ -14,13 +14,13 @@ document.getElementById('connect').onclick = function() {
             beta = event.beta
             console.log("gamma: " + event.gamma);
             gamma = event.gamma
-            document.getElementById("status").innerHTML = "Oriented";
-        }, "*");
+            document.getElementById("status").innerHTML = "Alpha " + event.alpha + " Beta " + event.beta + " Gamma " + event.gamma;
+        }, false);
         window.addEventListener('devicemotion', function(event) {
             console.log("Detected motion");
             console.log("acceleration: " + event.acceleration);
             document.getElementById("status").innerHTML = "Motion";
-        }, "*");
+        }, false);
     } else {
         console.log("DeviceMotionEvent is not supported.")
     }
