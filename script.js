@@ -4,7 +4,7 @@ var alpha = null;
 var beta = null;
 var gamma = null;
 
-document.getElementById('connect').onclick = function() {
+document.getElementById("connect").addEventListener("click", function() {
     console.log("Button clicked");
     if (window.DeviceOrientationEvent) {
         console.log("DeviceOrientationEvent supported");
@@ -32,4 +32,4 @@ document.getElementById('connect').onclick = function() {
     } else {
         console.log("DeviceMotionEvent is not supported.")
     }
-}
+});
