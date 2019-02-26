@@ -1,4 +1,4 @@
-var synth = new Tone.Synth().toMaster()
+
 
 var alpha = null;
 var beta = null;
@@ -6,8 +6,25 @@ var gamma = null;
 
 var listening = false;
 
+
 document.getElementById("connect").addEventListener("click", function() {
     console.log("Button clicked");
+    var reverb = new Tone.JCReverb(0.4).connect(Tone.Master);
+    var delay = new Tone.FeedbackDelay(0.5);
+    var synth =new Tone.DuoSynth().chain(delay, reverb);
+    // create an array of notes to be played
+    const notes = ["C3", "Eb3", "G3", "Bb3"];
+    // create a new sequence with the synth and notes
+    const synthPart = new Tone.Sequence(
+    function(time, note) {
+        synth.triggerAttackRelease(note, "10hz", time);
+    },
+    notes,
+    "4n"
+    );
+    // Setup the synth to be ready to play on beat 1
+    synthPart.start();
+    Tone.Transport.start();
     if (window.DeviceOrientationEvent) {
         console.log("DeviceOrientationEvent supported");
         if (!listening) {
