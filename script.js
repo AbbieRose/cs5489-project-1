@@ -33,17 +33,15 @@ document.getElementById("connect").addEventListener("click", function() {
 });
 
 var orientationHandler = function(event) {
-    console.log("Detected orientation");
-    console.log("alpha: " + event.alpha);
     alpha = event.alpha
-    console.log("beta: " + event.beta);
     beta = event.beta
-    console.log("gamma: " + event.gamma);
     gamma = event.gamma
     document.getElementById("status").innerHTML = "Alpha " + event.alpha + " Beta " + event.beta + " Gamma " + event.gamma;
     if (alpha > 30) {
+        console.log("Alpha < 30");
         synth.triggerAttackRelease('C4', '64n');
     } else {
+        console.log("Alpha > 30")
         synth.triggerAttackRelease('E6', '64n');
     }
 };
