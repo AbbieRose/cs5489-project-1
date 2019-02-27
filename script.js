@@ -14,7 +14,7 @@ var synth =new Tone.DuoSynth().chain(delay, reverb);
 
 document.getElementById("connect").addEventListener("click", function() {
     console.log("Button clicked");
-
+    Tone.context.resume();
     if (window.DeviceOrientationEvent) {
         console.log("DeviceOrientationEvent supported");
         if (!listening) {
