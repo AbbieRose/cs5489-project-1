@@ -79,6 +79,8 @@ var orientationHandler = function(event) {
         synth.volume.value = -42;
     }
 
+    console.log("synth.volume.value: " + synth.volume.value);
+
     if (gamma <= -70) {
         synth.triggerAttackRelease("C4", "64n");
     } else if (gamma <= -60 && gamma > -70) {
