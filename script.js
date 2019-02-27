@@ -4,6 +4,8 @@ var alpha = null;
 var beta = null;
 var gamma = null;
 
+var interval = 10;
+
 var listening = false;    
 
 var reverb = new Tone.JCReverb(0.4).connect(Tone.Master);
@@ -37,11 +39,79 @@ var orientationHandler = function(event) {
     beta = event.beta
     gamma = event.gamma
     document.getElementById("status").innerHTML = "Alpha " + event.alpha + " Beta " + event.beta + " Gamma " + event.gamma;
-    if (alpha > 30) {
-        console.log("Alpha < 30");
-        synth.triggerAttackRelease('C4', '64n');
+    if (beta <= -160) {
+        synth.volume.value = -10
+    } else if (beta <= -140 && beta > -160) {
+        synth.volume.value = -12;
+    } else if (beta <= -120 && beta > -140) {
+        synth.volume.value = -14;
+    } else if (beta <= -100 && beta > -120) {
+        synth.volume.value = -16;
+    } else if (beta <= -80 && beta > -100) {
+        synth.volume.value = -18;
+    } else if (beta <= -60 && beta > -80) {
+        synth.volume.value = -20;
+    } else if (beta <= -40 && beta > -60) {
+        synth.volume.value = -22;
+    } else if (beta <= -20 && beta > -40) {
+        synth.volume.value = -24;
+    } else if (beta <= 0 && beta > -20) {
+        synth.volume.value = -26;
+    } else if (beta <= 20 && beta > 0) {
+        synth.volume.value = -28;
+    } else if (beta <= 40 && beta > 20) {
+        synth.volume.value = -30;
+    } else if (beta <= 60 && beta > 40) {
+        synth.volume.value = -28;
+    } else if (beta <= 80 && beta > 60) {
+        synth.volume.value = -30;
+    } else if (beta <= 100 && beta > 80) {
+        synth.volume.value = -32;
+    } else if (beta <= 120 && beta > 100) {
+        synth.volume.value = -34;
+    } else if (beta <= 140 && beta >120) {
+        synth.volume.value = -36;
+    } else if (beta <= 160 && beta > 140) {
+        synth.volume.value = -38;
+    } else if (beta > 160) {
+        synth.volume.value = -40;
     } else {
-        console.log("Alpha > 30")
-        synth.triggerAttackRelease('E6', '64n');
+        synth.volume.value = -42;
+    }
+
+    if (gamma <= -70) {
+        synth.triggerAttackRelease("C4", "64n");
+    } else if (gamma <= -60 && gamma > -70) {
+        synth.triggerAttackRelease("D4", "64n");
+    } else if (gamma <= -50 && gamma > -60) {
+        synth.triggerAttackRelease("E4", "64n");
+    } else if (gamma <= -40 && gamma > -50) {
+        synth.triggerAttackRelease("F4", "64n");
+    } else if (gamma <= -30 && gamma > -40) {
+        synth.triggerAttackRelease("G4", "64n");
+    } else if (gamma <= -20 && gamma > -30) {
+        synth.triggerAttackRelease("A5", "64n");
+    } else if (gamma <= -10 && gamma > -20) {
+        synth.triggerAttackRelease("C5", "64n");
+    } else if (gamma <= 0 && gamma > -10) {
+        synth.triggerAttackRelease("D5", "64n");
+    } else if (gamma <= 10 && gamma > 0) {
+        synth.triggerAttackRelease("E5", "64n");
+    } else if (gamma <= 20 && gamma > 10) {
+        synth.triggerAttackRelease("F5", "64n");
+    } else if (gamma <= 30 && gamma > 20) {
+        synth.triggerAttackRelease("G5", "64n");
+    } else if (gamma <= 40 && gamma > 30) {
+        synth.triggerAttackRelease("A5", "64n");
+    } else if (gamma <= 50 && gamma > 40) {
+        synth.triggerAttackRelease("C6", "64n");
+    } else if (gamma <= 60 && gamma > 50) {
+        synth.triggerAttackRelease("D6", "64n");
+    } else if (gamma <= 70 && gamma > 60) {
+        synth.triggerAttackRelease("E6", "64n");
+    } else if (gamma > 70) {
+        synth.triggerAttackRelease("F6", "64n");
+    } else {
+        synth.triggerAttackRelease("G6", "64n");
     }
 };
