@@ -79,38 +79,38 @@ var orientationHandler = function(event) {
     console.log("synth.volume.value: " + synth.volume.value);
 
     if (gamma <= -70) {
-        synth.triggerAttackRelease("C4", "64n");
+        synth.triggerAttackRelease("C1", "64n");
     } else if (gamma <= -60 && gamma > -70) {
-        synth.triggerAttackRelease("D4", "64n");
+        synth.triggerAttackRelease("C2", "64n");
     } else if (gamma <= -50 && gamma > -60) {
-        synth.triggerAttackRelease("E4", "64n");
+        synth.triggerAttackRelease("C3", "64n");
     } else if (gamma <= -40 && gamma > -50) {
-        synth.triggerAttackRelease("F4", "64n");
+        synth.triggerAttackRelease("G3", "64n");
     } else if (gamma <= -30 && gamma > -40) {
-        synth.triggerAttackRelease("G4", "64n");
+        synth.triggerAttackRelease("C4", "64n");
     } else if (gamma <= -20 && gamma > -30) {
-        synth.triggerAttackRelease("A5", "64n");
+        synth.triggerAttackRelease("E4", "64n");
     } else if (gamma <= -10 && gamma > -20) {
-        synth.triggerAttackRelease("C5", "64n");
+        synth.triggerAttackRelease("G4", "64n");
     } else if (gamma <= 0 && gamma > -10) {
-        synth.triggerAttackRelease("D5", "64n");
+        synth.triggerAttackRelease("Bb5", "64n");
     } else if (gamma <= 10 && gamma > 0) {
-        synth.triggerAttackRelease("E5", "64n");
+        synth.triggerAttackRelease("C5", "64n");
     } else if (gamma <= 20 && gamma > 10) {
-        synth.triggerAttackRelease("F5", "64n");
+        synth.triggerAttackRelease("D5", "64n");
     } else if (gamma <= 30 && gamma > 20) {
-        synth.triggerAttackRelease("G5", "64n");
+        synth.triggerAttackRelease("E5", "64n");
     } else if (gamma <= 40 && gamma > 30) {
-        synth.triggerAttackRelease("A5", "64n");
+        synth.triggerAttackRelease("Gb5", "64n");
     } else if (gamma <= 50 && gamma > 40) {
-        synth.triggerAttackRelease("C6", "64n");
+        synth.triggerAttackRelease("G5", "64n");
     } else if (gamma <= 60 && gamma > 50) {
-        synth.triggerAttackRelease("D6", "64n");
+        synth.triggerAttackRelease("A6", "64n");
     } else if (gamma <= 70 && gamma > 60) {
-        synth.triggerAttackRelease("E6", "64n");
+        synth.triggerAttackRelease("Bb6", "64n");
     } else if (gamma > 70) {
-        synth.triggerAttackRelease("F6", "64n");
+        synth.triggerAttackRelease("B6", "64n");
     } else {
-        synth.triggerAttackRelease("G6", "64n");
+        synth.triggerAttackRelease("C6", "64n");
     }
 };
