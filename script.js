@@ -34,6 +34,7 @@ var orientationHandler = function(event) {
     alpha = event.alpha
     beta = event.beta
     gamma = event.gamma
+    console.log("Tone state: " + Tone.context.state);
     document.getElementById("status").innerHTML = "Alpha " + event.alpha + " Beta " + event.beta + " Gamma " + event.gamma;
     if (beta <= -160) {
         synth.volume.value = -10
